@@ -1,0 +1,8 @@
+/wp-content/uploads
+/wp-content/themes/node_modules
+/wp-content/backups-dup-pro
+/wp-content/ai1wm-backups
+wp-config.php
+.htaccess
+license.txt
+readme.html
