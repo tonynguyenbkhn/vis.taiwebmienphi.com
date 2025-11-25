@@ -6,3 +6,7 @@ wp-config.php
 .htaccess
 license.txt
 readme.html
+huongdan.zip
+/wp-content/backups
+/wp-content/nfwlog
+/wp-content/themes/**/node_modules

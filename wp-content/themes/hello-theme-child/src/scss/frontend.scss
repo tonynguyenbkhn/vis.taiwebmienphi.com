@@ -71,6 +71,15 @@
   margin-left: 10px;
 }
 
+.member-grid-slider-swiper {
+  .swiper-wrapper {
+    align-items: stretch;
+    .swiper-slide {
+      height: auto;
+    }
+  }
+}
+
 .member-grid-slider .member-grid-slider-item {
   border-radius: 10px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
@@ -78,6 +87,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .member-grid-slider .member-grid-slider-item__avatar img {
