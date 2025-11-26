@@ -93,7 +93,7 @@ get_header();
 										type="search"
 										class="search-field"
 										placeholder="<?php echo _x('Search by keyword, author, or event…', 'placeholder', 'twmp-vis'); ?>"
-										value="<?php echo esc_attr($filter_args['s']); ?>"
+										value="<?php echo esc_attr(!empty($filter_args['s']) ? $filter_args['s'] : ''); ?>"
 										name="search_key"
 										title="<?php echo _x('Search for:', 'label', 'twmp-vis'); ?>">
 								</label>
