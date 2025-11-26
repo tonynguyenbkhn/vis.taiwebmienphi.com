@@ -18027,7 +18027,9 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
-
+.page-standard {
+  overflow: hidden;
+}
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/swiper/swiper.css ***!
   \*****************************************************************************************************************************************************/
