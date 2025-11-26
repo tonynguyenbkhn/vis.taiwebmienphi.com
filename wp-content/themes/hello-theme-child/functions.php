@@ -217,8 +217,20 @@ function twmp_get_post_meta_items($allow_keys = [])
 	return $items;
 }
 
+// Cho phép SVG upload
 function allow_svg_upload($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
 add_filter('upload_mimes', 'allow_svg_upload');
+
+// Bỏ kiểm tra lỗi MIME type SVG
+function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime) {
+    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    if ($ext === 'svg') {
+        $data['ext'] = 'svg';
+        $data['type'] = 'image/svg+xml';
+    }
+    return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5);
