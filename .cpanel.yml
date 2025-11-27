@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/hkzatwzl/public_html/
+    - export DEPLOYPATH=/home/hkzatwzl/public_html/wp-content/themes/
+    - /bin/rm -rf $DEPLOYPATH/hello-theme-child
     - /bin/cp -rf wp-content/themes/hello-theme-child $DEPLOYPATH
