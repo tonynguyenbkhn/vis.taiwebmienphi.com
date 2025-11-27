@@ -234,3 +234,13 @@ function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime) {
     return $data;
 }
 add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5);
+
+// Chặn hiển thị Checkout trong register form (form "create" hoặc "register")
+add_filter( 'ump_before_submit_form', 'ihc_disable_checkout_on_register_form', 9999, 4 );
+function ihc_disable_checkout_on_register_form( $output, $is_public, $typeOfForm, $register_level ) {
+    // $is_public == true khi public form, $typeOfForm có thể 'create' (Register) hoặc 'register' (lite)
+    if ( $is_public === true && ( $typeOfForm === 'create' || $typeOfForm === 'register' ) ) {
+        return ''; // xóa output, checkout sẽ không hiển thị
+    }
+    return $output;
+}
