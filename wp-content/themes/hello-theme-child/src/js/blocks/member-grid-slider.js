@@ -43,6 +43,20 @@ export default el => {
                 el: select('.swiper-pagination', el),
                 clickable: true
             },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2
+                },
+                640: {
+                    slidesPerView: 2.2
+                },
+                1024: {
+                    slidesPerView: 3
+                },
+                1280: {
+                    slidesPerView: 4
+                }
+            },
             on: {
                 init: function () {
                     addClass('swiper-loaded', swiperEl)

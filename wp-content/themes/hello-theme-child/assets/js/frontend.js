@@ -90,6 +90,20 @@ __webpack_require__.r(__webpack_exports__);
         el: (0,lib_dom__WEBPACK_IMPORTED_MODULE_0__.select)('.swiper-pagination', el),
         clickable: true
       },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2
+        },
+        640: {
+          slidesPerView: 2.2
+        },
+        1024: {
+          slidesPerView: 3
+        },
+        1280: {
+          slidesPerView: 4
+        }
+      },
       on: {
         init: function () {
           (0,lib_dom__WEBPACK_IMPORTED_MODULE_0__.addClass)('swiper-loaded', swiperEl);
