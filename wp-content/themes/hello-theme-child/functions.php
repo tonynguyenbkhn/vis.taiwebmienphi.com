@@ -244,3 +244,16 @@ function ihc_disable_checkout_on_register_form( $output, $is_public, $typeOfForm
     }
     return $output;
 }
+
+function themename_post_formats_setup() {
+	add_theme_support( 'post-formats', array(  'aside',
+    'gallery',
+    'link',
+    'image',
+    'quote',
+    'status',
+    'video',
+    'audio',
+    'chat' ) );
+}
+add_action( 'after_setup_theme', 'themename_post_formats_setup' );

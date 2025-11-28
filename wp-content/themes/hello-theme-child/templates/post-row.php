@@ -28,6 +28,19 @@ $post_description = $post_data->post_excerpt ? wp_trim_words($post_data->post_ex
 
 $options = $data['options'];
 
+$format = get_post_format() ? get_post_format() : ''; 
+
+$who = get_post_meta(get_the_ID(), 'ihc_mb_who', true);
+
+$need_show_restricted = false;
+
+if (!empty($who)) {
+    $levels = array_map('trim', explode(',', $who));
+
+    if (in_array('4', $levels) || in_array('2', $levels)) {
+        $need_show_restricted = true;
+    }
+}
 ?>
 <article class="<?php echo esc_attr($_class); ?>">
 	<div class="post-row__wrapper row">
@@ -46,13 +59,17 @@ $options = $data['options'];
 		<div class="col-lg-9">
 			<div class="post-row__content">
 				<div class="d-flex align-items-center">
-					<div class="restricted">
-						<?php echo twmp_get_svg_icon('restricted') ?>
-						<span>premium access</span>
-					</div>
+					<?php if ($need_show_restricted): ?>
+						<div class="restricted">
+							<?php echo twmp_get_svg_icon('restricted') ?>
+							<span><?php echo esc_html('premium access') ?></span>
+						</div>
+					<?php endif; ?>
+					<?php if ($format): ?>
 					<div class="post-type">
-						<span>Video</span>
+						<span><?php echo esc_html($format) ?></span>
 					</div>
+					<?php endif; ?>
 				</div>
 				<a class="post-row__title-link" href="<?php echo esc_url_raw(get_permalink($post_data)); ?>" title="">
 					<h3 class="post-row__title h5"><?php echo esc_html($post_title); ?></h3>

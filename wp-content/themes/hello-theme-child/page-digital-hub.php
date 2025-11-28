@@ -138,7 +138,7 @@ get_header();
 								'update_post_meta_cache' => false,
 								'update_post_term_cache' => false,
 								'no_found_rows'          => true,
-								'posts_per_page'         => 3
+								'posts_per_page'         => 10
 							);
 
 							// HỢP NHẤT VỚI ARGS TÌM KIẾM
